@@ -49,8 +49,8 @@ select.addEventListener("change", () => {
   anime({
     targets: '.card',
     opacity: [0, 1],
-    translateY: [-20, 0],
-    duration: 600,
+    translateY: [-10, 0],
+    duration: 500,
     easing: 'easeOutExpo',
     delay: anime.stagger(100)
   });

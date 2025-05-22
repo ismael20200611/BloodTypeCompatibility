@@ -1,100 +1,96 @@
-:root {
-  --bg: #f0f8ff;
-  --text: #2c3e50;
-  --card-bg: #ffffff;
-  --highlight: #c0392b;
-  --accent: #e74c3c;
-}
-
-body.dark {
-  --bg: #1e1e1e;
-  --text: #f5f5f5;
-  --card-bg: #2a2a2a;
-  --highlight: #ff7675;
-  --accent: #fab1a0;
-}
-
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  background: #f5faff;
+  color: #2c3e50;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background: #1e1e2f;
+  color: #f5faff;
 }
 
 .container {
-  background-color: var(--card-bg);
-  padding: 40px;
+  background: white;
+  padding: 30px 40px;
   border-radius: 20px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
   text-align: center;
 }
 
-.header {
+body.dark .container {
+  background: #2c2c3a;
+}
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 h1 {
-  color: var(--highlight);
-  font-size: 2em;
+  font-size: 1.8em;
+  margin: 0;
+  color: #ff6b81;
 }
 
 #themeToggle {
   background: none;
   border: none;
-  font-size: 1.5em;
+  font-size: 1.4em;
   cursor: pointer;
-  transition: transform 0.3s;
 }
 
-#themeToggle:hover {
-  transform: rotate(20deg);
+.selector {
+  margin: 20px 0;
 }
 
 .selector label {
+  display: block;
   font-size: 1.1em;
   margin-bottom: 10px;
-  display: block;
 }
 
 select {
-  width: 100%;
   padding: 10px;
   font-size: 1em;
-  border-radius: 10px;
-  border: 2px solid var(--highlight);
-  background: #fff;
-  margin-top: 10px;
-  outline: none;
+  border-radius: 12px;
+  border: 2px solid #82ccdd;
+  width: 100%;
+  background: #f0f8ff;
 }
 
 .results {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .card {
-  background-color: var(--card-bg);
-  border-left: 6px solid var(--highlight);
-  margin-bottom: 20px;
+  background: #eafaff;
   padding: 20px;
+  margin-bottom: 15px;
+  border-left: 5px solid #82ccdd;
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
+}
+
+body.dark .card {
+  background: #3a3a4a;
+  border-left-color: #70a1ff;
 }
 
 .card h2 {
-  color: var(--accent);
   margin-bottom: 10px;
+  color: #3dc1d3;
 }
 
 .card p {
-  font-weight: bold;
   font-size: 1.2em;
+  font-weight: bold;
 }
