@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blood Type Compatibility</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🩸 Blood Type Compatibility</h1>
+      <button id="themeToggle">🌙</button>
+    </div>
+
+    <div class="selector">
+      <label for="bloodType">Choose a Blood Type:</label>
+      <select id="bloodType">
+        <option value="" disabled selected>Select your blood type</option>
+        <option value="O-">🅾️-</option>
+        <option value="O+">🅾️+</option>
+        <option value="A-">🅰️-</option>
+        <option value="A+">🅰️+</option>
+        <option value="B-">🅱️-</option>
+        <option value="B+">🅱️+</option>
+        <option value="AB-">🆎-</option>
+        <option value="AB+">🆎+</option>
+      </select>
+    </div>
+
+    <div class="results">
+      <div class="card">
+        <h2>Can Receive From:</h2>
+        <p id="receive"></p>
+      </div>
+      <div class="card">
+        <h2>Can Donate To:</h2>
+        <p id="donate"></p>
+      </div>
+    </div>
+
+    <audio id="selectSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_e3bc28cf79.mp3"></audio>
+  </div>
+</body>
+</html>
