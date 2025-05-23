@@ -10,8 +10,8 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-body.dark {
-  background: #1e1e2f;
+.darkmode {
+  background: #3c3c5c;
   color: #f5faff;
 }
 
@@ -26,7 +26,7 @@ body.dark {
   
 }
 
-body.dark .container {
+.darkmode .container {
   background: #2c2c3a;
   position: relative;
 }
@@ -75,12 +75,12 @@ h1 {
   color: #224cd8;
 }
 
-#themeToggle {
+/* #themeToggle {
   background: none;
   border: none;
   font-size: 1.4em;
   cursor: pointer;
-}
+} */
 
 .selector {
   margin: 20px 0;
@@ -114,7 +114,7 @@ select {
   transition: all 0.3s;
 }
 
-body.dark .card {
+.darkmode .card {
   background: #3a3a4a;
   border-left-color: #70a1ff;
 }
@@ -127,4 +127,30 @@ body.dark .card {
 .card p {
   font-size: 1.2em;
   font-weight: bold;
+}
+
+#themeToggle {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: var(--base-variant);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+#themeToggle  svg{
+  fill: var(--primary-color);
+}
+#themeToggle  svg:last-child{
+  display: none;
+}
+.darkmode #themeToggle  svg:first-child{
+  display: none;
+}
+.darkmode #themeToggle  svg:last-child{
+  display: block;
 }

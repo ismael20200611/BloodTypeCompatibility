@@ -37,7 +37,7 @@ const select = document.getElementById("bloodType");
 const receiveEl = document.getElementById("receive");
 const donateEl = document.getElementById("donate");
 const audio = document.getElementById("selectSound");
-const themeBtn = document.getElementById("themeToggle");
+
 
 select.addEventListener("change", () => {
   const selected = select.value;
@@ -59,7 +59,24 @@ select.addEventListener("change", () => {
   audio.play();
 });
 
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-});
+
+// Initialize the select element with the first blood type
+let darkmode = localStorage.getItem('darkmode')
+const themeSwitch = document.getElementById('themeToggle')
+
+const enableDarkmode = () => {
+  document.body.classList.add('darkmode')
+  localStorage.setItem('darkmode', 'active')
+}
+
+const disableDarkmode = () => {
+  document.body.classList.remove('darkmode')
+  localStorage.setItem('darkmode', null)
+}
+
+if(darkmode === "active") enableDarkmode()
+
+themeSwitch.addEventListener("click", () => {
+  darkmode = localStorage.getItem('darkmode')
+  darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+})
