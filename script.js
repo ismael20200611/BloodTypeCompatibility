@@ -61,5 +61,5 @@ select.addEventListener("change", () => {
 
 themeBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  themeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  themeBtn.textContent = document.body.classList.contains("dark") ? "m" : "🌙";
 });
