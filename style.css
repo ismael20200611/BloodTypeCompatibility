@@ -210,3 +210,10 @@ select {
     display: none;
   }
 }
+.explanation {
+  font-size: 0.9em;
+  color: #c92ac1;
+  margin-top: 0.5em;
+}
+
+/* end print */
