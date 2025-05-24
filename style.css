@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Nunito', sans-serif;
-  background: #f5faff;
+  background: #aeb3b396;
   color: #2c3e50;
   display: flex;
   justify-content: center;
@@ -23,6 +23,7 @@ body {
   width: 100%;
   max-width: 500px;
   text-align: center;
+  position: relative;
   
 }
 
@@ -74,14 +75,6 @@ h1 {
   margin: 0;
   color: #224cd8;
 }
-
-/* #themeToggle {
-  background: none;
-  border: none;
-  font-size: 1.4em;
-  cursor: pointer;
-} */
-
 .selector {
   margin: 20px 0;
 }
@@ -153,4 +146,67 @@ select {
 }
 .darkmode #themeToggle  svg:last-child{
   display: block;
+}
+
+
+
+
+/* button */
+.btnNew{
+  margin: 100px;
+  padding: 15px 40px;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  
+}
+.btnNew::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+  background: transparent;
+}
+/* glow */
+.btnNew::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #FF0000, #FF7300, #FFFB00, #48FF00,
+    #00FFD5, #002BFF, #FF00C8, #FF0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 600%;
+  z-index: -1;
+  width: calc(100% + 4px);
+  height:  calc(100% + 4px);
+  filter: blur(-8px);
+  animation: glowing 20s linear infinite;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+  opacity: 200;
+  
+}
+
+@keyframes glowing {
+  0% {background-position: 0 0;}
+  50% {background-position: 400% 0;}
+  100% {background-position: 0 0;}
+}
+/* desing print */
+
+@media print {
+  #printBtn {
+    display: none;
+  }
 }

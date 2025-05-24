@@ -44,6 +44,14 @@
         <p id="donate"></p>
       </div>
     </section>
+    <button id="printBtn" class="btnNew">Print Results</button>
+
+<script>
+  const printBtn = document.getElementById('printBtn');
+  printBtn.addEventListener('click', () => {
+    window.print();
+  });
+</script>
 
     <audio id="selectSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_e3bc28cf79.mp3"></audio>
   </div>
