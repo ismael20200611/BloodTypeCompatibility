@@ -48,9 +48,17 @@
 
     </section>
 
+<!-- print start -->
+    <button id="printBtn" class="btnNew">Print Results</button>
+<script>
+  const printBtn = document.getElementById('printBtn');
+  printBtn.addEventListener('click', () => {
+    window.print();
+  });
+</script>
+<!-- end print -->
 
-
-    <audio id="selectSound" src="aa.mp3"></audio>
+    <audio id="selectSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_e3bc28cf79.mp3"></audio>
   </div>
 </body>
 </html>
