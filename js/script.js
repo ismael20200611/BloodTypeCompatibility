@@ -85,6 +85,15 @@ select.addEventListener('change', () => {
   audio.currentTime = 0;
   audio.play();
 });
+  // Toggle menu functionality
+  function toggleMenu() {
+    const menu = document.getElementById("navLinks");
+    menu.classList.toggle("show");
+  }
+// Blood Type Compatibility Checker -end all and info working
+
+
+
 //Blood Type Compatibility Checker -end all and info working
 
 // Date and Time Display
@@ -106,27 +115,27 @@ function updateDateTime() {
 
 
 
-// View Count Functionality
+// // View Count Functionality
 
-  function countView(itemId) {
-    // Get current count from localStorage
-    let count = localStorage.getItem(itemId);
-    count = count ? parseInt(count) + 1 : 1;
+//   function countView(itemId) {
+//     // Get current count from localStorage
+//     let count = localStorage.getItem(itemId);
+//     count = count ? parseInt(count) + 1 : 1;
 
-    // Save it back
-    localStorage.setItem(itemId, count);
+//     // Save it back
+//     localStorage.setItem(itemId, count);
 
-    // Update the display
-    document.getElementById(itemId + '-count').innerText = count;
-  }
+//     // Update the display
+//     document.getElementById(itemId + '-count').innerText = count;
+//   }
 
-  // Show stored count on load
-  window.onload = function () {
-    const itemId = 'item1';
-    const count = localStorage.getItem(itemId) || 0;
-    document.getElementById(itemId + '-count').innerText = count;
-  }
-  // View Count Functionality
+//   // Show stored count on load
+//   window.onload = function () {
+//     const itemId = 'item1';
+//     const count = localStorage.getItem(itemId) || 0;
+//     document.getElementById(itemId + '-count').innerText = count;
+//   }
+//   // View Count Functionality
 
 
 // Print functionality
