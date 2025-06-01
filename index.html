@@ -5,20 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blood Type Compatibility</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Blood Type Compatibility</h1>
-      <button id="themeToggle" class="container">
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
-    </button>
-    </header>
+ <!-- Header with Logo -->
+  <header>
+   <nav>
+  <a href="#" class="logo"><img src="img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
 
+  <!-- Hamburger toggle for mobile -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="tools/about.html">About</a></li>
+    <li><a href="tools/contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+
+  </header>
+
+<!-- Main Content Container -->
+
+
+
+  <div class="container">
+    <div class="logo-text">
+    <h1>Blood Type Compatibility</h1>
+    <p>Find out who you can receive from and donate to</p>
+  </div>
     <section class="selector">
       <label for="bloodType">Choose Your Blood Type</label>
       <select id="bloodType">
@@ -33,7 +55,25 @@
         <option value="AB+">🆎+</option>
       </select>
     </section>
+    <!-- ---------------------------------------------new table for info and date and time -->
+    <div class="container">
+    <div id="date-time"></div>
 
+    <!-- <p>Age<input type="datetime-local"></p>
+    <p>Full name<input type="text"></p>
+    <p>Age<input type="number"></p>
+    <p>Gender:<input type="checkbox"> Male <input type="checkbox">Female</p>
+    <p>City<input type="text"></p>
+    <p>Number<input type="number"></p> -->
+     <!-- <p>view for select<input type="number"></p> -->
+     <!-- <p>view for print<input type="number"></p> -->
+    <!-- <p>excel and word ms family<input type="text"></p> -->
+    <!-- <p>id <input type="text"></p> -->
+    <!-- <p>id save pdf by id because when i have Folder in This PCs all files pdf save in this file one click add excel or word after easy to find by id<input type="text"></p> -->
+    <!-- ------------------------------------------------------------ -->
+
+    
+    </div>
     <section class="results">
       <div class="card">
       <h2>💉 You can receive from:</h2>
@@ -45,20 +85,29 @@
       <p id="donate"></p>
       <p id="donateExplanation" class="explanation"></p>
       </div>
-
     </section>
 
 <!-- print start -->
-    <button id="printBtn" class="btnNew">Print Results</button>
-<script>
-  const printBtn = document.getElementById('printBtn');
-  printBtn.addEventListener('click', () => {
-    window.print();
-  });
-</script>
-<!-- end print -->
+    <button id="printBtn" class="btnNew" onclick="countView('item1')">Print Results Views: <span id="item1-count">0</span></button >
+     
 
-    <audio id="selectSound" src="Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
+   <audio id="selectSound" src="sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
+
   </div>
+
+   <!-- Footer -->
+  <footer>
+    <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Last updated: June 2025</p>
+    &copy; <a class="border-bottom" href="">Blood Type Compatibility</a>, All Right Reserved. 
+							
+						Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+  </p>
+  </footer>
+  
+  <script>
+ 
+</script>
+
 </body>
 </html>

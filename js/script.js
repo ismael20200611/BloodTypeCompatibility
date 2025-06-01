@@ -87,27 +87,50 @@ select.addEventListener('change', () => {
 });
 //Blood Type Compatibility Checker -end all and info working
 
-// mode light and dark mode --strat working 
-let darkmode = localStorage.getItem('darkmode')
-const themeSwitch = document.getElementById('themeToggle')
+// Date and Time Display
+function updateDateTime() {
+    const now = new Date();
+    const options = {
+      weekday: 'short', year: 'numeric', month: 'short',
+      day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit'
+    };
+    document.getElementById('date-time').innerHTML = now.toLocaleString('en-US', options);
+  }
 
-const enableDarkmode = () => {
-  document.body.classList.add('darkmode')
-  localStorage.setItem('darkmode', 'active')
-}
+  // Update every second
+  setInterval(updateDateTime, 1000);
 
-const disableDarkmode = () => {
-  document.body.classList.remove('darkmode')
-  localStorage.setItem('darkmode', null)
-}
-
-if(darkmode === "active") enableDarkmode()
-
-themeSwitch.addEventListener("click", () => {
-  darkmode = localStorage.getItem('darkmode')
-  darkmode !== "active" ? enableDarkmode() : disableDarkmode()
-})
-// mode light and dark mode --end working 
+  // Initial call
+  updateDateTime();
+// Date and Time Display
 
 
 
+// View Count Functionality
+
+  function countView(itemId) {
+    // Get current count from localStorage
+    let count = localStorage.getItem(itemId);
+    count = count ? parseInt(count) + 1 : 1;
+
+    // Save it back
+    localStorage.setItem(itemId, count);
+
+    // Update the display
+    document.getElementById(itemId + '-count').innerText = count;
+  }
+
+  // Show stored count on load
+  window.onload = function () {
+    const itemId = 'item1';
+    const count = localStorage.getItem(itemId) || 0;
+    document.getElementById(itemId + '-count').innerText = count;
+  }
+  // View Count Functionality
+
+
+// Print functionality
+ const printBtn = document.getElementById('printBtn');
+  printBtn.addEventListener('click', () => {
+    window.print();
+  });
