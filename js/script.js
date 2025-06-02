@@ -114,30 +114,6 @@ function updateDateTime() {
 // Date and Time Display
 
 
-
-// View Count Functionality
-
-  function countView(itemId) {
-    // Get current count from localStorage
-    let count = localStorage.getItem(itemId);
-    count = count ? parseInt(count) + 1 : 1;
-
-    // Save it back
-    localStorage.setItem(itemId, count);
-
-    // Update the display
-    document.getElementById(itemId + '-count').innerText = count;
-  }
-
-  // Show stored count on load
-  window.onload = function () {
-    const itemId = 'item1';
-    const count = localStorage.getItem(itemId) || 0;
-    document.getElementById(itemId + '-count').innerText = count;
-  }
-  // View Count Functionality
-
-
 // Print functionality
  const printBtn = document.getElementById('printBtn');
   printBtn.addEventListener('click', () => {
