@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>فصيلة الدم</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+
+  <style>
+
+
+
+  </style>
+</head>
+<body>
+ <!-- Header with Logo -->
+  <header>
+   <nav>
+  <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+
+  <!-- Hamburger toggle for mobile -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul id="navLinks">
+    <li><a href="ar_index.html" class="active">الصفحه الرئيسيه</a></li>
+    <li><a href="ar_producat.html">منتج</a></li>
+    <li><a href="ar_about.html">حول</a></li>
+    <li><a href="ar_contact.html">اتصال</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn">اللغه ▼</a>
+          <div class="dropdown-content">
+               <a href="../index.html">الإنجليزية</a>
+               <a href="../Ku/ku_index.html">الكردية</a>
+               <a href="../fr/fr_index.html">فرنسي</a>
+               <a href="#">Sp</a>
+               <a href="#">po</a>
+               <a href="#">it</a>
+               <a href="#">ch</a>
+               <a href="#">mor</a>
+           </div>
+    </li>
+  </ul>
+  
+</nav>
+
+
+  </header>
+
+<!-- Main Content Container -->
+
+
+
+  <div class="container">
+    <div class="logo-text">
+    <h1>توافق فصائل الدم</h1>
+    <p>اكتشف من يمكنك استلام المساعدات منه والتبرع له</p>
+  </div>
+    <section class="selector">
+      <label for="bloodType">اختر فصيلة دمك</label>
+      <select id="bloodType">
+        <option value="" disabled selected>اختر واحدة</option>
+        <option value="O-">🅾️-</option>
+        <option value="O+">🅾️+</option>
+        <option value="A-">🅰️-</option>
+        <option value="A+">🅰️+</option>
+        <option value="B-">🅱️-</option>
+        <option value="B+">🅱️+</option>
+        <option value="AB-">🆎-</option>
+        <option value="AB+">🆎+</option>
+      </select>
+    </section>
+    <!-- ---------------------------------------------new table for info and date and time -->
+     <div class="container">
+    <p>الاسم الكامل &emsp; &nbsp;<input type="text" placeholder="Full Name"></p>
+    <p>عمر&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;<input type="number"  placeholder="Age"></p>
+    <p>جنسين &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;<input type="checkbox"> ذكر&emsp; &nbsp;<input type="checkbox">أنثى&nbsp; &emsp;</p>
+    <p>مدينة &emsp;&emsp;&nbsp;&emsp;&emsp;&nbsp;<input type="text" placeholder="City and Country"></p>
+    <p>رقم الهاتف &emsp; &emsp;&nbsp;<input type="number" placeholder="Phone Number"></p> 
+    <p>البريد الإلكتروني &nbsp;<input type="email" placeholder="Electronic Mail"></p> 
+    <div id="date-time"></div>
+    </div>
+
+    <div class="container">
+    <section class="results">
+      <div class="card">
+      <h2>💉 يمكنك الاستلام من:</h2>
+      <p id="receive"></p>
+      <p id="receiveExplanation" class="explanation"></p>
+      </div>
+      <div class="card">
+      <h2>💖 يمكنك التبرع إلى:</h2>
+      <p id="donate"></p>
+      <p id="donateExplanation" class="explanation"></p>
+      </div>
+    </section>
+
+<!-- print start -->
+    <button id="printBtn" class="btnNew">طباعة النتائج </button >
+     
+
+   <audio id="selectSound" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
+
+  </div>
+
+</div>
+  
+     <!-- Footer -->
+  <footer>
+    <p>أنشأ بواسطة <a href="https://ismael-software.vercel.app/" target="_blank">نويزيان</a></p>
+    <p>آخر تحديث: يونيو 2025</p>
+    &copy; <a class="border-bottom" href="#">توافق فصائل الدم</a>, جميع الحقوق محفوظة. 
+							
+						صمم بواسطة <a class="border-bottom" href="https://ismael-software.vercel.app/">نويزيان</a>
+                        
+  </footer>
+  
+<script>
+  // Blood Type Compatibility Checker -start all and info working
+const compatibility = {
+  "O-": {
+    receive: ["(🅾️-)"],
+    donate: ["(🅾️-)", "(🅾️+)", "(🅰️-)", "(🅰️+)", "(🅱️-)", "(🅱️+)", "(🆎-)", "(🆎+)"],
+    donateWhy: ' ليس لديك أي بروتينات A أو B أو Rh على خلايا الدم الحمراء الخاصة بك. وهذا يعني أن دمك لن يثير استجابة مناعية لدى أي شخص. وهذا يجعلك متبرعًا عالميًا.',
+    receiveWhy: 'نظرًا لأن جهازك المناعي يتفاعل مع بروتينات A أو B أو Rh، فإن أي عدم تطابق بسيط قد يكون خطيرًا. فقط O− هو آمن تمامًا بالنسبة لك.'
+  },
+  "O+": {
+    receive: ["(🅾️-)", "(🅾️+)"],
+    donate: ["(🅾️+)", "(🅰️+)", "(🅱️+)", "(🆎+)"],
+    donateWhy: 'لديك بروتين Rh ولكن ليس لديك بروتين A أو B. يمكنك التبرع بأمان لأي شخص لديه Rh + ولا يحتاج إلى بروتينات A أو B.',
+    receiveWhy: 'تحتاج إلى دم من فصيلة O (لا يوجد A أو B)، ويجب أن يتطابق Rh (الإيجابي هو أمر جيد).'
+  },
+  "A-": {
+    receive: ["(🅾️-)", "(🅰️-)"],
+    donate: ["(🅰️-)", "(🅰️+)", "(🆎-)", "(🆎+)"],
+    donateWhy: 'لديك بروتين A ولكن ليس لديك Rh. يمكنك العطاء لـ A-، A+، AB-، AB+ (طالما أنهم يستطيعون قبول A).',
+    receiveWhy: 'لا يمكنك الحصول على دم B أو Rh إيجابي. فقط A− أو O− هو الآمن.'
+  },
+  "A+": {
+    receive: ["(🅾️-)", "(🅾️+)", "(🅰️-)", "(🅰️+)"],
+    donate: ["(🅰️+)", "(🆎+)"],
+    donateWhy: 'يحتوي دمك على بروتينات A و Rh. يمكنك التبرع به للآخرين الذين يحملون نفس البروتينات (A+ وAB+).',
+    receiveWhy: 'تحتاج إلى دم متوافق مع فصيلة الدم A و Rh، ولا يحتوي على بروتين B.'
+  },
+  "B-": {
+    receive: ["(🅾️-)", "(🅱️-)"],
+    donate: ["(🅱️-)", "(🅱️+)", "(🆎-)", "(🆎+)"],
+    donateWhy: 'دمك يحتوي على فصيلة B، لكن ليس Rh. يمكنك التبرع للأشخاص الذين يحملون فصيلة B، سواءً كانوا Rh- أو Rh+.',
+    receiveWhy: 'لا يستطيع جسمك قبول فصيلة الدم A أو Rh. فقط فصيلة الدم B− أو O− آمنة.'
+  },
+  "B+": {
+    receive: ["(🅾️-)", "(🅾️+)", "(🅱️-)", "(🅱️+)"],
+    donate: ["(🅱️+)", "(🆎+)"],
+    donateWhy: ' لديكِ فصيلة الدم B وفصيلة الدم Rh. يمكنكِ التبرع فقط للأشخاص الذين لديهم فصيلة الدم B وفصيلة الدم Rh أيضًا.',
+    receiveWhy: 'يجب أن تطابق نوعي B وRh - لا يُسمح بنوع A.'
+  },
+  "AB-": {
+    receive: ["(🅾️-)", "(🅰️-)", "(🅱️-)", "(🆎-)"],
+    donate: ["(🆎-)", "(🆎+)"],
+    donateWhy: 'يحتوي دمك على بروتينات A و B ولكن لا يحتوي على Rh. يمكنك التبرع فقط لأصحاب فصيلة الدم AB.',
+    receiveWhy: 'يجب عليك تجنب Rh+ واستقبال فقط من المتبرعين الذين لا يحتويون على بروتينات متضاربة.'
+  },
+  "AB+": {
+    receive: ["(🅾️-)", "(🅾️+)", "(🅰️-)", "(🅰️+)", "(🅱️-)", "(🅱️+)", "(🆎-)", "(🆎+)"],
+    donate: ["(🆎+)"],
+    donateWhy: 'لديك جميع البروتينات (A، B، Rh). لا يمكن استقبال دمك بأمان إلا من فصيلة دم AB+ أخرى.',
+    receiveWhy: 'أنت المتلقي العالمي. يمكنك قبول الدم من أي شخص لأن جهازك المناعي يتعرف على جميع البروتينات.'
+  },
+};
+</script>
+
+</body>
+</html>

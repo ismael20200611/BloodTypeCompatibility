@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blood Type Compatibility</title>
+  <title>Blood Type</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
   <script src="js/script.js" defer></script>
 
   <style>
+
 
 
   </style>
@@ -32,6 +33,19 @@
     <li><a href="tools/producat.html">Producat</a></li>
     <li><a href="tools/about.html">About</a></li>
     <li><a href="tools/contact.html">Contact</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn">Language ▼</a>
+          <div class="dropdown-content">
+               <a href="Ku/ku_index.html">Kurdish</a>
+               <a href="ar/ar_index.html">Arabic</a>
+               <a href="fr/fr_index.html">French</a>
+               <a href="#">Sp</a>
+               <a href="#">po</a>
+               <a href="#">it</a>
+               <a href="#">ch</a>
+               <a href="#">mor</a>
+           </div>
+    </li>
   </ul>
   
 </nav>
@@ -64,11 +78,12 @@
     </section>
     <!-- ---------------------------------------------new table for info and date and time -->
      <div class="container">
-    <p>Full name   <input type="text"></p>
-    <p>Age &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number"></p>
-    <p>Gender &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"> Male&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">Female&nbsp;&nbsp;&nbsp; &nbsp;</p>
-    <p>City &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"></p>
-    <p>Number &nbsp;&nbsp;&nbsp;<input type="number"></p> 
+    <p>Full name <input type="text" placeholder="Full Nmae"></p>
+    <p>Age &emsp; &emsp; &nbsp;<input type="number" placeholder="Age"></p>
+    <p>Gender &emsp;&emsp;&nbsp;<input type="checkbox"> Male&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">Female&nbsp;&nbsp;&nbsp; &nbsp;</p>
+    <p>City &emsp; &emsp; &nbsp;<input type="text" placeholder="City and Country"></p>
+    <p>Phone  &emsp; &nbsp; <input type="number" placeholder="Phone Number"></p> 
+    <p>E-mail  &emsp;&nbsp; <input type="email" placeholder="Electronic Mail"></p> 
     <div id="date-time"></div>
     </div>
 
@@ -106,8 +121,58 @@
   </p>
   </footer>
   
-  <script>
- 
+<script>
+  // Blood Type Compatibility Checker -start all and info working
+const compatibility = {
+  "O-": {
+    receive: ["🅾️-"],
+    donate: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donateWhy: ' You have no A, B, or Rh proteins on your red blood cells. That means your blood won’t trigger an immune response in anyone.This makes you a universal donor.',
+    receiveWhy: 'Since your immune system reacts to A, B, or Rh proteins, even a small mismatch can be dangerous. Only O− is completely safe for you.'
+  },
+  "O+": {
+    receive: ["🅾️-", "🅾️+"],
+    donate: ["🅾️+", "🅰️+", "🅱️+", "🆎+"],
+    donateWhy: 'You have the Rh protein but no A or B. You can safely donate to anyone with Rh+ who doesn’t need A or B proteins.',
+    receiveWhy: 'You need O blood (no A or B), and the Rh must match (positive is OK).'
+  },
+  "A-": {
+    receive: ["🅾️-", "🅰️-"],
+    donate: ["🅰️-", "🅰️+", "🆎-", "🆎+"],
+    donateWhy: 'You have A protein but no Rh. You can give to A-, A+, AB-, AB+ (as long as they can accept A).',
+    receiveWhy: 'You can’t receive B or Rh-positive blood. Only A− or O− is safe.'
+  },
+  "A+": {
+    receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+"],
+    donate: ["🅰️+", "🆎+"],
+    donateWhy: 'Your blood has A and Rh proteins. You can give to others with the same proteins (A+ and AB+).',
+    receiveWhy: 'You need blood with A and Rh compatibility, and no B protein.'
+  },
+  "B-": {
+    receive: ["🅾️-", "🅱️-"],
+    donate: ["🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donateWhy: 'Your blood has B but not Rh. You can donate to people who accept B, whether they are Rh− or Rh+',
+    receiveWhy: 'Your body cannot accept A or Rh. Only B− or O− is safe.'
+  },
+  "B+": {
+    receive: ["🅾️-", "🅾️+", "🅱️-", "🅱️+"],
+    donate: ["🅱️+", "🆎+"],
+    donateWhy: ' You have B and Rh. You can only give to people who also have B and Rh.',
+    receiveWhy: 'You need to match B and Rh types — no A is allowed.'
+  },
+  "AB-": {
+    receive: ["🅾️-", "🅰️-", "🅱️-", "🆎-"],
+    donate: ["🆎-", "🆎+"],
+    donateWhy: 'Your blood has both A and B proteins but no Rh. You can only give to AB people.',
+    receiveWhy: 'You must avoid Rh+ and only receive from donors with no conflicting proteins.'
+  },
+  "AB+": {
+    receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donate: ["🆎+"],
+    donateWhy: 'You have all proteins (A, B, Rh). Your blood can only be safely received by another AB+.',
+    receiveWhy: 'You are the universal recipient. You can accept blood from anyone because your immune system recognizes all proteins.'
+  },
+};
 </script>
 
 </body>

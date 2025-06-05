@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Groupe Sanguin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+
+  <style>
+
+
+
+  </style>
+</head>
+<body>
+ <!-- Header with Logo -->
+  <header>
+   <nav>
+  <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+
+  <!-- Hamburger toggle for mobile -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul id="navLinks">
+    <li><a href="index.html" class="active">Maison</a></li>
+    <li><a href="fr_producat.html">Produire</a></li>
+    <li><a href="fr_about.html">À propos</a></li>
+    <li><a href="fr_contact.html">Contact</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn">Langue ▼</a>
+          <div class="dropdown-content">
+               <a href="../index.html">Anglais</a>
+               <a href="../Ku/ku_index.html">Kurde</a>
+               <a href="../ar/ar_index.html">Arabe</a>
+               <a href="#">Fr</a>
+               <a href="#">Sp</a>
+               <a href="#">po</a>
+               <a href="#">it</a>
+               <a href="#">ch</a>
+               <a href="#">mor</a>
+           </div>
+    </li>
+  </ul>
+  
+</nav>
+
+
+  </header>
+
+<!-- Main Content Container -->
+
+
+
+  <div class="container">
+    <div class="logo-text">
+    <h1>Compatibilité des groupes sanguins</h1>
+    <p>Découvrez de qui vous pouvez recevoir et à qui vous pouvez faire un don</p>
+  </div>
+    <section class="selector">
+      <label for="bloodType">Choisissez votre groupe sanguin</label>
+      <select id="bloodType">
+        <option value="" disabled selected>Sélectionnez-en un</option>
+        <option value="O-">🅾️-</option>
+        <option value="O+">🅾️+</option>
+        <option value="A-">🅰️-</option>
+        <option value="A+">🅰️+</option>
+        <option value="B-">🅱️-</option>
+        <option value="B+">🅱️+</option>
+        <option value="AB-">🆎-</option>
+        <option value="AB+">🆎+</option>
+      </select>
+    </section>
+    <!-- ---------------------------------------------new table for info and date and time -->
+     <div class="container">
+    <p>Nom et prénom <input type="text" placeholder="Full Nmae"></p>
+    <p>Âge &emsp; &emsp; &emsp; &emsp; &nbsp;<input type="number" placeholder="Age"></p>
+    <p>Genre &emsp;&emsp;&emsp;&emsp;&nbsp;<input type="checkbox"> Mâle&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">Femelle&nbsp;&nbsp;&nbsp; &nbsp;</p>
+    <p>Ville &emsp; &emsp; &emsp;&emsp; &nbsp;<input type="text" placeholder="City and Country"></p>
+    <p>Téléphone &emsp; &nbsp; &nbsp; <input type="number" placeholder="Phone Number"></p> 
+    <p>E-mail  &emsp;&emsp; &emsp; &nbsp; <input type="email" placeholder="Electronic Mail"></p> 
+    <div id="date-time"></div>
+    </div>
+
+    <div class="container">
+    <section class="results">
+      <div class="card">
+      <h2>💉 Vous pouvez recevoir de :</h2>
+      <p id="receive"></p>
+      <p id="receiveExplanation" class="explanation"></p>
+      </div>
+      <div class="card">
+      <h2>💖 Vous pouvez faire un don à :</h2>
+      <p id="donate"></p>
+      <p id="donateExplanation" class="explanation"></p>
+      </div>
+    </section>
+
+<!-- print start -->
+    <button id="printBtn" class="btnNew">Imprimer les résultats </button >
+     
+
+   <audio id="selectSound" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
+
+  </div>
+
+</div>
+  
+     <!-- Footer -->
+  <footer>
+    <p>Créé par <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
+    <p>Dernière mise à jour : juin 2025</p>
+    &copy; <a class="border-bottom" href="#">Compatibilité des groupes sanguins</a>, Tous droits réservés. 
+		Conçu par <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>                     
+  </footer>
+  
+  
+<script>
+  // Blood Type Compatibility Checker -start all and info working
+const compatibility = {
+  "O-": {
+    receive: ["🅾️-"],
+    donate: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donateWhy: ' Vos globules rouges ne contiennent ni protéines A, ni protéines B, ni protéines Rh. Cela signifie que votre sang ne déclenche pas de réponse immunitaire chez quiconque. Vous êtes donc un donneur universel.',
+    receiveWhy: 'Étant donné que votre système immunitaire réagit aux protéines A, B ou Rh, même une infime discordance peut être dangereuse. Seul O− est totalement sans danger pour vous.'
+  },
+  "O+": {
+    receive: ["🅾️-", "🅾️+"],
+    donate: ["🅾️+", "🅰️+", "🅱️+", "🆎+"],
+    donateWhy: 'Vous avez la protéine Rh mais pas de protéine A ou B. Vous pouvez faire un don en toute sécurité à toute personne Rh+ qui n’a pas besoin de protéines A ou B.',
+    receiveWhy: 'Vous avez besoin de sang O (pas de A ou B) et le Rh doit correspondre (positif est OK).'
+  },
+  "A-": {
+    receive: ["🅾️-", "🅰️-"],
+    donate: ["🅰️-", "🅰️+", "🆎-", "🆎+"],
+    donateWhy: 'Vous avez une protéine A mais pas de Rh. Vous pouvez donner à A-, A+, AB-, AB+ (à condition qu’ils puissent accepter A).',
+    receiveWhy: 'Vous ne pouvez pas recevoir de sang B ou Rh positif. Seuls les sangs A− ou O− sont sans danger.'
+  },
+  "A+": {
+    receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+"],
+    donate: ["🅰️+", "🆎+"],
+    donateWhy: 'Votre sang contient des protéines A et Rh. Vous pouvez en donner à d’autres personnes possédant les mêmes protéines (A+ et AB+).',
+    receiveWhy: 'Vous avez besoin de sang compatible A et Rh, et sans protéine B.'
+  },
+  "B-": {
+    receive: ["🅾️-", "🅱️-"],
+    donate: ["🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donateWhy: 'Votre sang contient du B, mais pas de Rh. Vous pouvez donner du sang à des personnes qui acceptent le B, qu’elles soient Rh− ou Rh+.',
+    receiveWhy: 'Votre corps ne peut pas accepter A ou Rh. Seuls B− ou O− sont sans danger.'
+  },
+  "B+": {
+    receive: ["🅾️-", "🅾️+", "🅱️-", "🅱️+"],
+    donate: ["🅱️+", "🆎+"],
+    donateWhy: ' Vous avez B et Rh. Vous ne pouvez donner qu’aux personnes qui ont également B et Rh.',
+    receiveWhy: 'Vous devez faire correspondre les types B et Rh — aucun A n’est autorisé.'
+  },
+  "AB-": {
+    receive: ["🅾️-", "🅰️-", "🅱️-", "🆎-"],
+    donate: ["🆎-", "🆎+"],
+    donateWhy: 'Votre sang contient à la fois des protéines A et B, mais pas de Rh. Vous ne pouvez le donner qu’aux personnes AB.',
+    receiveWhy: 'Vous devez éviter Rh+ et recevoir uniquement des donneurs sans protéines conflictuelles.'
+  },
+  "AB+": {
+    receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donate: ["🆎+"],
+    donateWhy: 'Vous possédez toutes les protéines (A, B, Rh). Votre sang ne peut être reçu en toute sécurité que par un autre AB+.',
+    receiveWhy: 'Vous êtes le receveur universel. Vous pouvez accepter le sang de n’importe qui, car votre système immunitaire reconnaît toutes les protéines.'
+  },
+};
+</script>
+
+</body>
+</html>

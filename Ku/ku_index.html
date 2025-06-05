@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>سەرەتا</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+
+  <style>
+
+
+
+  </style>
+</head>
+<body>
+ <!-- Header with Logo -->
+  <header>
+   <nav>
+  <a href="#" class="logo"><img src="../img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+
+  <!-- Hamburger toggle for mobile -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul id="navLinks">
+    <li><a href="ku_index.html" class="active">سەرەتا</a></li>
+    <li><a href="ku_producat.html">بەرهەمهێنان</a></li>
+    <li><a href="ku_about.html">دەربارەی</a></li>
+    <li><a href="ku_contact.html">پەیوەندی</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn">زمان ▼ </a>
+          <div class="dropdown-content">
+               <a href="../index.html">ئینگلیزی</a>
+               <a href="../ar/ar_index.html">عەرەبی</a>
+               <a href="../fr/fr_index.html">Fr</a>
+               <a href="#">Sp</a>
+               <a href="#">po</a>
+               <a href="#">it</a>
+               <a href="#">ch</a>
+               <a href="#">mor</a>
+           </div>
+    </li>
+  </ul>
+  
+</nav>
+
+
+  </header>
+
+<!-- Main Content Container -->
+
+
+
+  <div class="container">
+    <div class="logo-text">
+    <h1>گونجانی جۆری خوێن</h1>
+    <p>بزانە دەتوانیت خوێن لە کێ وەربگریت و ببەخشیت بە کێ</p>
+  </div>
+    <section class="selector">
+      <label for="bloodType">جۆری خوێنت هەڵبژێرە</label>
+      <select id="bloodType">
+        <option value="" disabled selected>یەکێک هەڵبژێرە</option>
+        <option value="O-">🅾️-</option>
+        <option value="O+">🅾️+</option>
+        <option value="A-">🅰️-</option>
+        <option value="A+">🅰️+</option>
+        <option value="B-">🅱️-</option>
+        <option value="B+">🅱️+</option>
+        <option value="AB-">🆎-</option>
+        <option value="AB+">🆎+</option>
+      </select>
+    </section>
+    <!-- ---------------------------------------------new table for info and date and time -->
+     <div class="container">
+    <p>ناوی تەواو &nbsp;&emsp;&emsp;&emsp;<input type="text" placeholder="Full Name"></p>
+    <p>تەمەن &nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&nbsp;<input type="number" placeholder="Age"></p>
+    <p>ڕەگەز &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; <input type="checkbox"> نێر&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">مێ&nbsp;&nbsp;&nbsp; &nbsp;</p>
+    <p>شار&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;<input type="text" placeholder="City and Country"></p>
+    <p>ژمارە &ensp;&emsp;&emsp;&emsp;&emsp;&emsp;<input type="number" placeholder="Phone Number"></p> 
+    <p>پۆستی ئەلیکترۆنی <input type="email"  placeholder="Electronic Mail"></p> 
+    <div id="date-time"></div>
+    </div>
+
+    <div class="container">
+    <section class="results">
+      <div class="card">
+      <h2>💉 دەتوانیت وەربگری لە:</h2>
+      <p id="receive"></p>
+      <p id="receiveExplanation" class="explanation"></p>
+      </div>
+      <div class="card">
+      <h2>💖 دەتوانیت ببەخشیت بۆ:</h2>
+      <p id="donate"></p>
+      <p id="donateExplanation" class="explanation"></p>
+      </div>
+    </section>
+
+<!-- print start -->
+    <button id="printBtn" class="btnNew">چاپکردنی ئەنجامەکان </button >
+     
+
+   <audio id="selectSound" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
+
+  </div>
+
+</div>
+  
+   <!-- Footer -->
+  <footer>
+    <p>دروستکراوە لەلایەن <a href="https://ismael-software.vercel.app/" target="_blank"> نوێژیان </a></p>
+    <p>دوایین نوێکردنەوە: حوزەیرانی 2025</p>
+    &copy; <a class="border-bottom" href="">گونجانی جۆری خوێن</a>, هەموو مافەکان پارێزراون. 
+							
+						دیزاین کراوە لەلایەن <a class="border-bottom" href="https://ismael-software.vercel.app/"> نوێژیان </a>
+  </p>
+  </footer>
+  
+  <script>
+ // Blood Type Compatibility Checker -start all and info working
+const compatibility = {
+  "O-": {
+    receive: ["(🅾️-)"],
+    donate: ["(🅾️-)", "(🅾️+)", "(🅰️-)", "(🅰️+)", "(🅱️-)", "(🅱️+)", "(🆎-)", "(🆎+)"],
+    donateWhy: ' تۆ هیچ پرۆتینێکی A و B و Rh لەسەر خڕۆکە سوورەکانی خوێنت نییە. ئەمەش واتە خوێنەکەت وەڵامی بەرگری لە کەسدا دروست ناکات. ئەمە وا دەکات تۆ ببیتە بەخشەرێکی گشتگیر.',
+    receiveWhy: 'بەو پێیەی سیستەمی بەرگری لەشت کاردانەوەی دەبێت بەرامبەر بە پڕۆتینەکانی A، B، یان Rh، تەنانەت ناتەبایی بچووکیش دەتوانێت مەترسیدار بێت. تەنها O− بە تەواوی سەلامەتە بۆ تۆ.'
+  },
+  "O+": {
+    receive: ["(🅾️-)", "(🅾️+)"],
+    donate: ["(🅾️+)", "(🅰️+)", "(🅱️+)", "(🆎+)"],
+    donateWhy: 'تۆ پرۆتینی Rhت هەیە بەڵام A یان B نییە. دەتوانیت بە سەلامەتی بەخشین بکەیت بە هەر کەسێک کە Rh+ ی هەبێت و پێویستی بە پڕۆتینی A یان B نییە.',
+    receiveWhy: 'پێویستت بە خوێنی O هەیە (بێ A یان B)، و Rh دەبێت هاوتا بێت (پۆزەتیڤ باشە)'
+  },
+  "A-": {
+    receive: ["(🅾️-)", "(🅰️-)"],
+    donate: ["(🅰️-)", "(🅰️+)", "(🆎-)", "(🆎+)"],
+    donateWhy: 'تۆ پرۆتینی جۆری A ت هەیە بەڵام فاکتەری Rh کەمە دەتوانیت ببەخشیت بە کەسانی جۆری خوێنی A- و A+ و هەروەها ئەوانەی جۆری خوێنی AB- و AB+ یان هەیە، بە مەرجێک بتوانن جۆری خوێنی A وەربگرن.',
+    receiveWhy: 'تۆ ناتوانیت خوێنی B یان Rh پۆزەتیڤ وەربگریت. تەنها A− یان O− سەلامەتە.'
+  },
+  "A+": {
+    receive: ["(🅾️-)", "(🅾️+)", "(🅰️-)", "(🅰️+)"],
+    donate: ["(🅰️+)", "(🆎+)"],
+    donateWhy: 'خوێنەکەت پرۆتینی A و Rh ی تێدایە. دەتوانیت بە هەمان پرۆتینی (A+ و AB+) بیدەیت بە کەسانی تر.',
+    receiveWhy: 'تۆ پێویستت بە خوێن هەیە کە لەگەڵ فاکتەری جۆری A و Rh بگونجێت و پرۆتینی B تێدا نەبێت.'
+  },
+  "B-": {
+    receive: ["(🅾️-)", "(🅱️-)"],
+    donate: ["(🅱️-)", "(🅱️+)", "(🆎-)", "(🆎+)"],
+    donateWhy: 'خوێنەکەت B ی هەیە بەڵام Rh ی نییە. دەتوانیت بەخشین بکەیت بەو کەسانەی کە B وەرئەگرن، جا Rh− یان Rh+ بن',
+    receiveWhy: 'جەستەت ناتوانێت A یان Rh قبوڵ بکات. تەنها B− یان O− سەلامەتە.'
+  },
+  "B+": {
+    receive: ["(🅾️-)", "(🅾️+)", "(🅱️-)", "(🅱️+)"],
+    donate: ["(🅱️+)", "(🆎+)"],
+    donateWhy: ' تۆ فاکتەری جۆری B و Rh ی خوێنت هەیە. تۆ تەنها دەتوانیت ئەو کەسانە ببەخشیت کە گروپی خوێنی B و فاکتەری Rhیان هەیە.',
+    receiveWhy: 'پێویستە جۆری B و Rh جووت بکەیت — A ڕێگەپێدراو نییە.'
+  },
+  "AB-": {
+    receive: ["(🅾️-)", "(🅰️-)", "(🅱️-)", "(🆎-)"],
+    donate: ["(🆎-)", "(🆎+)"],
+    donateWhy: 'خوێنت هەردوو پرۆتینی A و B ی تێدایە بەڵام Rh ی نییە. تەنها دەتوانیت بیدەیت بە خەڵکی AB.',
+    receiveWhy: 'پێویستە خۆت لە Rh+ دوور بخەیتەوە و تەنها بەخشینی بەخشەر وەربگریت بەبێ پرۆتینی ناکۆک.'
+  },
+  "AB+": {
+    receive: ["(🅾️-)", "(🅾️+)", "(🅰️-)", "(🅰️+)", "(🅱️-)", "(🅱️+)", "(🆎-)", "(🆎+)"],
+    donate: ["(🆎+)"],
+    donateWhy: 'تۆ هەموو پرۆتینەکانی خوێنت هەیە (A, B, Rh). خوێنت تەنها بە AB+ دەتوانرێت بە سەلامەتی وەربگیرێت.',
+    receiveWhy: 'تۆ وەرگری جیهانی. دەتوانیت خوێن لە هەموو کەسێک وەربگریت چونکە سیستەمی بەرگری هەموو پرۆتینەکان دەناسێت.'
+  },
+};
+  </script>
+
+</body>
+</html>
