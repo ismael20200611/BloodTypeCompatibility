@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>血型</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+  <script src="../js/script.js" defer></script>
+
+  <style>
+
+
+
+  </style>
+</head>
+<body>
+ <!-- Header with Logo -->
+  <header>
+   <nav>
+  <a href="#" class="logo"><img src="img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+
+  <!-- Hamburger toggle for mobile -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul id="navLinks">
+    <li><a href="ch_index.html" class="active">家</a></li>
+    <li><a href="ch_producat.html">生产</a></li>
+    <li><a href="ch_about.html">关于</a></li>
+    <li><a href="ch_contact.html">接触</a></li>
+    <li class="dropdown">
+        <a href="#" class="dropbtn">语言 ▼</a>
+          <div class="dropdown-content">
+               <a href="Ku/ku_index.html">Kurdish</a>
+               <a href="ar/ar_index.html">Arabic</a>
+               <a href="fr/fr_index.html">French</a>
+               <a href="#">Sp</a>
+               <a href="#">po</a>
+               <a href="#">it</a>
+               <a href="#">ch</a>
+               <a href="#">mor</a>
+           </div>
+    </li>
+  </ul>
+  
+</nav>
+
+
+  </header>
+
+<!-- Main Content Container -->
+
+
+
+  <div class="container">
+    <div class="logo-text">
+    <h1>血型兼容性</h1>
+    <p>了解你可以从谁那里获得捐款以及向谁捐款</p>
+  </div>
+    <section class="selector">
+      <label for="bloodType">选择你的血型</label>
+      <select id="bloodType">
+        <option value="" disabled selected>选择一个</option>
+        <option value="O-">🅾️-</option>
+        <option value="O+">🅾️+</option>
+        <option value="A-">🅰️-</option>
+        <option value="A+">🅰️+</option>
+        <option value="B-">🅱️-</option>
+        <option value="B+">🅱️+</option>
+        <option value="AB-">🆎-</option>
+        <option value="AB+">🆎+</option>
+      </select>
+    </section>
+    <!-- ---------------------------------------------new table for info and date and time -->
+     <div class="container">
+    <p>全名 <input type="text" placeholder="Full Nmae"></p>
+    <p>年龄 &emsp; &emsp; &nbsp;<input type="number" placeholder="Age"></p>
+    <p>性别 &emsp;&emsp;&nbsp;<input type="checkbox"> 男性&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">女性&nbsp;&nbsp;&nbsp; &nbsp;</p>
+    <p>城市 &emsp; &emsp; &nbsp;<input type="text" placeholder="City and Country"></p>
+    <p>电话  &emsp; &nbsp; <input type="number" placeholder="Phone Number"></p> 
+    <p>电子邮件  &emsp;&nbsp; <input type="email" placeholder="Electronic Mail"></p> 
+    <div id="date-time"></div>
+    </div>
+
+    <div class="container">
+    <section class="results">
+      <div class="card">
+      <h2>💉 您可以从以下渠道收到：</h2>
+      <p id="receive"></p>
+      <p id="receiveExplanation" class="explanation"></p>
+      </div>
+      <div class="card">
+      <h2>💖 您可以捐款给：</h2>
+      <p id="donate"></p>
+      <p id="donateExplanation" class="explanation"></p>
+      </div>
+    </section>
+
+<!-- print start -->
+    <button id="printBtn" class="btnNew">打印结果 </button >
+     
+
+   <audio id="selectSound" src="sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
+
+  </div>
+
+</div>
+  
+ <!-- Footer -->
+  <footer>
+    <p>创建者 <a href="https://ismael-software.vercel.app/" target="_blank">恩韦日扬</a></p>
+    <p>最后更新：2025年6月</p>
+    &copy; <a class="border-bottom" href="">血型兼容性</a>, 版权所有。 
+    设计者 <a class="border-bottom" href="https://ismael-software.vercel.app/">恩韦日扬</a>
+  </p>
+  </footer>
+  
+<script>
+  // Blood Type Compatibility Checker -start all and info working
+const compatibility = {
+  "O-": {
+    receive: ["🅾️-"],
+    donate: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donateWhy: ' 您的红细胞中没有A、B或Rh蛋白。这意味着您的血液不会引发任何人的免疫反应。这使您成为万能血供者。',
+    receiveWhy: '由于您的免疫系统对A、B或Rh蛋白均有反应，即使轻微的错配也可能造成危险。只有O-蛋白对您来说是完全安全的。'
+  },
+  "O+": {
+    receive: ["🅾️-", "🅾️+"],
+    donate: ["🅾️+", "🅰️+", "🅱️+", "🆎+"],
+    donateWhy: '您有 Rh 蛋白，但没有 A 或 B。您可以安全地向任何不需要 A 或 B 蛋白的 Rh+ 血型人士捐献血液。',
+    receiveWhy: '您需要 O 型血（没有 A 型或 B 型），并且 Rh 血型必须匹配（阳性也可以）。.'
+  },
+  "A-": {
+    receive: ["🅾️-", "🅰️-"],
+    donate: ["🅰️-", "🅰️+", "🆎-", "🆎+"],
+    donateWhy: '您有A蛋白，但没有Rh。您可以给A-、A+、AB-、AB+血型的人输血（只要他们能接受A蛋白）。',
+    receiveWhy: '您不能接受B型血或Rh阳性血。只有A型血或O型血是安全的。'
+  },
+  "A+": {
+    receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+"],
+    donate: ["🅰️+", "🆎+"],
+    donateWhy: '您的血液含有 A 型血和 Rh 型血蛋白。您可以将血液输给其他拥有相同蛋白（A+ 和 AB+）的血型的人。',
+    receiveWhy: '您需要 A 型血和 Rh 型血相容，但不含 B 蛋白。'
+  },
+  "B-": {
+    receive: ["🅾️-", "🅱️-"],
+    donate: ["🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donateWhy: '您的血液是B型血，但没有Rh型血。您可以捐献给接受B型血的人，无论他们是Rh阴性还是Rh阳性。',
+    receiveWhy: '您的身体无法接受 A 型血或 Rh 型血。只有 B- 型血或 O- 型血是安全的。'
+  },
+  "B+": {
+    receive: ["🅾️-", "🅾️+", "🅱️-", "🅱️+"],
+    donate: ["🅱️+", "🆎+"],
+    donateWhy: ' 您有 B 型血和 Rh 型血。您只能将血液输注给同样有 B 型血和 Rh 型血的人。',
+    receiveWhy: '您需要匹配 B 型和 Rh 型 — 不允许 A 型。'
+  },
+  "AB-": {
+    receive: ["🅾️-", "🅰️-", "🅱️-", "🆎-"],
+    donate: ["🆎-", "🆎+"],
+    donateWhy: '您的血液中同时含有A型和B型蛋白，但没有Rh型血。您只能给AB型血的人输血。',
+    receiveWhy: '您必须避免使用 Rh+ 并且只接受没有冲突蛋白质的捐赠者的血液。'
+  },
+  "AB+": {
+    receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
+    donate: ["🆎+"],
+    donateWhy: '您拥有所有蛋白质（A、B、Rh）。您的血液只能安全地被其他AB+血型的人接受。',
+    receiveWhy: '你是万能受体。你可以接受任何人的血液，因为你的免疫系统能够识别所有蛋白质。'
+  },
+};
+</script>
+
+</body>
+</html>

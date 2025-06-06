@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr">    
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>关于</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</head>
+<body>
+  <!-- Header with Logo -->
+  <header>
+    <nav>
+      <a href="#" class="logo"> <img src="../img/logo.png" alt="Logo" class="logo" /></a>
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <ul id="navLinks">
+        <li><a href="../index.html">家</a></li>
+        <li><a href="producat.html">生产</a></li>
+        <li><a href="about.html" class="active">关于</a></li>
+        <li><a href="contact.html">接触</a></li>
+        <li class="dropdown">
+        <a href="#" class="dropbtn">语言 ▼</a>
+          <div class="dropdown-content">
+               <a href="../Ku/ku_about.html">Kurdish</a>
+               <a href="../ar/ar_about.html">Arabic</a>
+               <a href="../fr/fr_about.html">French</a>
+               <a href="#">Sp</a>
+               <a href="#">po</a>
+               <a href="#">it</a>
+               <a href="#">ch</a>
+               <a href="#">mor</a>
+           </div>
+    </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="container btnNe1" style="margin: auto; margin-top: 30px;">
+    <h1>关于血型兼容性</h1>
+  <img src="../img/standford.png" alt="Blood Type Compatibility" class="container" /> &nbsp;&nbsp;&nbsp;
+  
+  <div class="logo-text">
+      <p>了解血型兼容性如何发挥作用</p>
+    </div>
+    <section class="about-content">
+      <h2>了解血型兼容性</h2>
+      <p>血型相容性对于安全输血和器官捐献至关重要。每种血型都有特定的抗原和抗体，决定谁可以接受或捐献血液。</p>
+      <h3>要点：</h3>
+      <ul>
+        <li><strong>通用捐助者：</strong> O- 可以捐献所有血型。</li>
+        <li><strong>通用收件人：</strong> AB+ 可以接收所有血型。</li>
+        <li><strong>Rh 因素:</strong> 正极 (+) 可以从正极和负极接收，而负极 (-) 只能从负极接收。</li>
+      </ul>
+    <p>血型相容性对于安全输血和器官捐献至关重要。每种血型都有特定的抗原和抗体，决定谁可以接受或捐献血液。</p>  
+    </section>  
+    <section class="about-content">
+      <h2>如何使用此工具</h2>
+      <p>从下拉菜单中选择您的血型，查看您可以接收或捐献的血型。结果将显示兼容的血型及其说明。</p>
+      <h3>例子：</h3>
+      <p>如果您选择O-，该工具将显示您可以接受O-和O+血型，并且您可以捐献所有其他血型。</p>
+    </section>
+
+  </div>
+  
+
+        <!-- Footer -->
+  <footer>
+    <p>创建者 <a href="https://ismael-software.vercel.app/" target="_blank">恩韦日扬</a></p>
+    <p>最后更新：2025年6月</p>
+    &copy; <a class="border-bottom" href="">血型兼容性</a>, 版权所有。 
+    设计者 <a class="border-bottom" href="https://ismael-software.vercel.app/">恩韦日扬</a>
+  </p>
+  </footer>
+</body>
+
+</html>
