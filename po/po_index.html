@@ -59,13 +59,13 @@
 
   <div class="container">
     <div class="logo-text">
-    <h1>Blood Type Compatibility</h1>
-    <p>Find out who you can receive from and donate to</p>
+    <h1>Zgodność grup krwi</h1>
+    <p>Dowiedz się, od kogo możesz otrzymywać i komu możesz przekazać darowiznę</p>
   </div>
     <section class="selector">
-      <label for="bloodType">Choose Your Blood Type</label>
+      <label for="bloodType">Wybierz swoją grupę krwi</label>
       <select id="bloodType">
-        <option value="" disabled selected>Select one</option>
+        <option value="" disabled selected>Wybierz jedną</option>
         <option value="O-">🅾️-</option>
         <option value="O+">🅾️+</option>
         <option value="A-">🅰️-</option>
@@ -78,11 +78,11 @@
     </section>
     <!-- ---------------------------------------------new table for info and date and time -->
      <div class="container">
-    <p>Full name <input type="text" placeholder="Full Nmae"></p>
-    <p>Age &emsp; &emsp; &nbsp;<input type="number" placeholder="Age"></p>
-    <p>Gender &emsp;&emsp;&nbsp;<input type="checkbox"> Male&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">Female&nbsp;&nbsp;&nbsp; &nbsp;</p>
-    <p>City &emsp; &emsp; &nbsp;<input type="text" placeholder="City and Country"></p>
-    <p>Phone  &emsp; &nbsp; <input type="number" placeholder="Phone Number"></p> 
+    <p>Pełne imię i nazwisko <input type="text" placeholder="Full Nmae"></p>
+    <p>Wiek &emsp; &emsp; &nbsp;<input type="number" placeholder="Age"></p>
+    <p>Płeć &emsp;&emsp;&nbsp;<input type="checkbox"> Mężczyzna&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">Kobieta&nbsp;&nbsp;&nbsp; &nbsp;</p>
+    <p>Miasto &emsp; &emsp; &nbsp;<input type="text" placeholder="City and Country"></p>
+    <p>Telefon  &emsp; &nbsp; <input type="number" placeholder="Phone Number"></p> 
     <p>E-mail  &emsp;&nbsp; <input type="email" placeholder="Electronic Mail"></p> 
     <div id="date-time"></div>
     </div>
@@ -90,19 +90,19 @@
     <div class="container">
     <section class="results">
       <div class="card">
-      <h2>💉 You can receive from:</h2>
+      <h2>💉 Możesz otrzymywać od:</h2>
       <p id="receive"></p>
       <p id="receiveExplanation" class="explanation"></p>
       </div>
       <div class="card">
-      <h2>💖 You can donate to:</h2>
+      <h2>💖 Możesz dokonać darowizny na rzecz:</h2>
       <p id="donate"></p>
       <p id="donateExplanation" class="explanation"></p>
       </div>
     </section>
 
 <!-- print start -->
-    <button id="printBtn" class="btnNew">Print Results </button >
+    <button id="printBtn" class="btnNew">Wydrukuj wyniki </button >
      
 
    <audio id="selectSound" src="../sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
@@ -126,50 +126,50 @@ const compatibility = {
   "O-": {
     receive: ["🅾️-"],
     donate: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
-    donateWhy: ' You have no A, B, or Rh proteins on your red blood cells. That means your blood won’t trigger an immune response in anyone.This makes you a universal donor.',
-    receiveWhy: 'Since your immune system reacts to A, B, or Rh proteins, even a small mismatch can be dangerous. Only O− is completely safe for you.'
+    donateWhy: ' Nie masz białek A, B ani Rh na czerwonych krwinkach. Oznacza to, że twoja krew nie wywoła reakcji immunologicznej u nikogo. To czyni cię uniwersalnym dawcą.',
+    receiveWhy: 'Ponieważ Twój układ odpornościowy reaguje na białka A, B lub Rh, nawet mała niezgodność może być niebezpieczna. Tylko O− jest dla Ciebie całkowicie bezpieczne.'
   },
   "O+": {
     receive: ["🅾️-", "🅾️+"],
     donate: ["🅾️+", "🅰️+", "🅱️+", "🆎+"],
-    donateWhy: 'You have the Rh protein but no A or B. You can safely donate to anyone with Rh+ who doesn’t need A or B proteins.',
-    receiveWhy: 'You need O blood (no A or B), and the Rh must match (positive is OK).'
+    donateWhy: 'Posiadasz białko Rh, ale nie masz białka A ani B. Możesz bezpiecznie oddać krew każdej osobie z czynnikiem Rh+, która nie potrzebuje białek A ani B.',
+    receiveWhy: 'Potrzebna jest grupa krwi 0 (nie A ani B) i czynnik Rh musi być zgodny (dodatni jest dopuszczalny).'
   },
   "A-": {
     receive: ["🅾️-", "🅰️-"],
     donate: ["🅰️-", "🅰️+", "🆎-", "🆎+"],
-    donateWhy: 'You have A protein but no Rh. You can give to A-, A+, AB-, AB+ (as long as they can accept A).',
-    receiveWhy: 'You can’t receive B or Rh-positive blood. Only A− or O− is safe.'
+    donateWhy: 'Masz białko A, ale nie masz Rh. Możesz podać A-, A+, AB-, AB+ (pod warunkiem, że mogą zaakceptować A).',
+    receiveWhy: 'Nie możesz otrzymać krwi B lub Rh-dodatniej. Tylko A− lub O− jest bezpieczne.'
   },
   "A+": {
     receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+"],
     donate: ["🅰️+", "🆎+"],
-    donateWhy: 'Your blood has A and Rh proteins. You can give to others with the same proteins (A+ and AB+).',
-    receiveWhy: 'You need blood with A and Rh compatibility, and no B protein.'
+    donateWhy: 'Twoja krew ma białka A i Rh. Możesz podawać je innym osobom z tymi samymi białkami (A+ i AB+).',
+    receiveWhy: 'Potrzebna jest krew zgodna pod względem czynnika A i Rh, ale bez białka B.'
   },
   "B-": {
     receive: ["🅾️-", "🅱️-"],
     donate: ["🅱️-", "🅱️+", "🆎-", "🆎+"],
-    donateWhy: 'Your blood has B but not Rh. You can donate to people who accept B, whether they are Rh− or Rh+',
-    receiveWhy: 'Your body cannot accept A or Rh. Only B− or O− is safe.'
+    donateWhy: 'Twoja krew ma B, ale nie Rh. Możesz oddać krew osobom, które akceptują B, niezależnie od tego, czy mają Rh− czy Rh+',
+    receiveWhy: 'Twój organizm nie może zaakceptować A lub Rh. Tylko B− lub O− są bezpieczne.'
   },
   "B+": {
     receive: ["🅾️-", "🅾️+", "🅱️-", "🅱️+"],
     donate: ["🅱️+", "🆎+"],
-    donateWhy: ' You have B and Rh. You can only give to people who also have B and Rh.',
-    receiveWhy: 'You need to match B and Rh types — no A is allowed.'
+    donateWhy: ' Masz B i Rh. Możesz dawać tylko osobom, które mają również B i Rh.',
+    receiveWhy: 'Należy dopasować typy B i Rh — typ A nie jest dozwolony.'
   },
   "AB-": {
     receive: ["🅾️-", "🅰️-", "🅱️-", "🆎-"],
     donate: ["🆎-", "🆎+"],
-    donateWhy: 'Your blood has both A and B proteins but no Rh. You can only give to AB people.',
-    receiveWhy: 'You must avoid Rh+ and only receive from donors with no conflicting proteins.'
+    donateWhy: 'Twoja krew ma zarówno białka A, jak i B, ale nie ma Rh. Możesz ją podawać tylko osobom z AB.',
+    receiveWhy: 'Należy unikać czynnika Rh+ i przyjmować krew wyłącznie od dawców niezawierających białek konfliktowych.'
   },
   "AB+": {
     receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
     donate: ["🆎+"],
-    donateWhy: 'You have all proteins (A, B, Rh). Your blood can only be safely received by another AB+.',
-    receiveWhy: 'You are the universal recipient. You can accept blood from anyone because your immune system recognizes all proteins.'
+    donateWhy: 'Masz wszystkie białka (A, B, Rh). Twoja krew może być bezpiecznie przyjęta tylko przez innego AB+.',
+    receiveWhy: 'Jesteś uniwersalnym biorcą. Możesz przyjąć krew od kogokolwiek, ponieważ twój układ odpornościowy rozpoznaje wszystkie białka.'
   },
 };
 </script>
