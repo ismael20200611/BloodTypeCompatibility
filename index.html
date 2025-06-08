@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blood Type</title>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
@@ -15,53 +16,54 @@
 
   </style>
 </head>
+
 <body>
- <!-- Header with Logo -->
+  <!-- Header with Logo -->
   <header>
-   <nav>
-  <a href="#" class="logo"><img src="img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
+    <nav>
+      <a href="#" class="logo"><img src="img/logo.png" alt="Logo" class="logo" /></a> &nbsp;&nbsp;&nbsp;
 
-  <!-- Hamburger toggle for mobile -->
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+      <!-- Hamburger toggle for mobile -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-  <ul id="navLinks">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="tools/producat.html">Producat</a></li>
-    <li><a href="tools/about.html">About</a></li>
-    <li><a href="tools/contact.html">Contact</a></li>
-    <li class="dropdown">
-        <a href="#" class="dropbtn">Language ▼</a>
+      <ul id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="tools/producat.html">Producat</a></li>
+        <li><a href="tools/about.html">About</a></li>
+        <li><a href="tools/contact.html">Contact</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Language ▼</a>
           <div class="dropdown-content">
-               <a href="Ku/ku_index.html">Kurdish</a>
-               <a href="ar/ar_index.html">Arabic</a>
-               <a href="fr/fr_index.html">French</a>
-               <a href="sp/sp_index.html">Spanish</a>
-               <a href="po/po_index.html">Polish</a>
-               <a href="it/it_index.html">Italian</a>
-               <a href="ch/ch_index.html">Chinese</a>
-               <a href="ge/ge_index.html">German</a>
-           </div>
-    </li>
-  </ul>
-  
-</nav>
+            <a href="Ku/ku_index.html">Kurdish</a>
+            <a href="ar/ar_index.html">Arabic</a>
+            <a href="fr/fr_index.html">French</a>
+            <a href="sp/sp_index.html">Spanish</a>
+            <a href="po/po_index.html">Polish</a>
+            <a href="it/it_index.html">Italian</a>
+            <a href="ch/ch_index.html">Chinese</a>
+            <a href="ge/ge_index.html">German</a>
+          </div>
+        </li>
+      </ul>
+
+    </nav>
 
 
   </header>
 
-<!-- Main Content Container -->
+  <!-- Main Content Container -->
 
 
 
   <div class="container">
     <div class="logo-text">
-    <h1>Blood Type Compatibility</h1>
-    <p>Find out who you can receive from and donate to</p>
-  </div>
+      <h1>Blood Type Compatibility</h1>
+      <p>Find out who you can receive from and donate to</p>
+    </div>
     <section class="selector">
       <label for="bloodType">Choose Your Blood Type</label>
       <select id="bloodType">
@@ -77,103 +79,104 @@
       </select>
     </section>
     <!-- ---------------------------------------------new table for info and date and time -->
-     <div class="container">
-    <p>Full name <input type="text" placeholder="Full Nmae"></p>
-    <p>Age &emsp; &emsp; &nbsp;<input type="number" placeholder="Age"></p>
-    <p>Gender &emsp;&emsp;&nbsp;<input type="checkbox"> Male&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">Female&nbsp;&nbsp;&nbsp; &nbsp;</p>
-    <p>City &emsp; &emsp; &nbsp;<input type="text" placeholder="City and Country"></p>
-    <p>Phone  &emsp; &nbsp; <input type="number" placeholder="Phone Number"></p> 
-    <p>E-mail  &emsp;&nbsp; <input type="email" placeholder="Electronic Mail"></p> 
-    <div id="date-time"></div>
+    <div class="container">
+      <p>Full name <input type="text" placeholder="Full Nmae"></p>
+      <p>Age &emsp; &emsp; &nbsp;<input type="number" placeholder="Age"></p>
+      <p>Gender &emsp;&emsp;&nbsp;<input type="checkbox"> Male&nbsp;&nbsp;&nbsp;&nbsp;<input
+          type="checkbox">Female&nbsp;&nbsp;&nbsp; &nbsp;</p>
+      <p>City &emsp; &emsp; &nbsp;<input type="text" placeholder="City and Country"></p>
+      <p>Phone &emsp; &nbsp; <input type="number" placeholder="Phone Number"></p>
+      <p>E-mail &emsp;&nbsp; <input type="email" placeholder="Electronic Mail"></p>
+      <div id="date-time"></div>
     </div>
 
     <div class="container">
-    <section class="results">
-      <div class="card">
-      <h2>💉 You can receive from:</h2>
-      <p id="receive"></p>
-      <p id="receiveExplanation" class="explanation"></p>
-      </div>
-      <div class="card">
-      <h2>💖 You can donate to:</h2>
-      <p id="donate"></p>
-      <p id="donateExplanation" class="explanation"></p>
-      </div>
-    </section>
+      <section class="results">
+        <div class="card">
+          <h2>💉 You can receive from:</h2>
+          <p id="receive"></p>
+          <p id="receiveExplanation" class="explanation"></p>
+        </div>
+        <div class="card">
+          <h2>💖 You can donate to:</h2>
+          <p id="donate"></p>
+          <p id="donateExplanation" class="explanation"></p>
+        </div>
+      </section>
 
-<!-- print start -->
-    <button id="printBtn" class="btnNew">Print Results </button >
-     
+      <!-- print start -->
+      <button id="printBtn" class="btnNew">Print Results </button>
 
-   <audio id="selectSound" src="sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
+
+      <audio id="selectSound" src="sound/Jazak-Allahu khayran kathiran fi ad-dunya wal-akhirah.mp3"></audio>
+
+    </div>
 
   </div>
 
-</div>
-  
-   <!-- Footer -->
+  <!-- Footer -->
   <footer>
     <p>Created by <a href="https://ismael-software.vercel.app/" target="_blank">Nwezhyan</a></p>
     <p>Last updated: June 2025</p>
-    &copy; <a class="border-bottom" href="">Blood Type Compatibility</a>, All Right Reserved. 
-							
-						Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
-  </p>
+    &copy; <a class="border-bottom" href="">Blood Type Compatibility</a>, All Right Reserved.
+    Designed By <a class="border-bottom" href="https://ismael-software.vercel.app/">Nwezhyan</a>
+    </p>
   </footer>
-  
-<script>
-  // Blood Type Compatibility Checker -start all and info working
-const compatibility = {
-  "O-": {
-    receive: ["🅾️-"],
-    donate: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
-    donateWhy: ' You have no A, B, or Rh proteins on your red blood cells. That means your blood won’t trigger an immune response in anyone.This makes you a universal donor.',
-    receiveWhy: 'Since your immune system reacts to A, B, or Rh proteins, even a small mismatch can be dangerous. Only O− is completely safe for you.'
-  },
-  "O+": {
-    receive: ["🅾️-", "🅾️+"],
-    donate: ["🅾️+", "🅰️+", "🅱️+", "🆎+"],
-    donateWhy: 'You have the Rh protein but no A or B. You can safely donate to anyone with Rh+ who doesn’t need A or B proteins.',
-    receiveWhy: 'You need O blood (no A or B), and the Rh must match (positive is OK).'
-  },
-  "A-": {
-    receive: ["🅾️-", "🅰️-"],
-    donate: ["🅰️-", "🅰️+", "🆎-", "🆎+"],
-    donateWhy: 'You have A protein but no Rh. You can give to A-, A+, AB-, AB+ (as long as they can accept A).',
-    receiveWhy: 'You can’t receive B or Rh-positive blood. Only A− or O− is safe.'
-  },
-  "A+": {
-    receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+"],
-    donate: ["🅰️+", "🆎+"],
-    donateWhy: 'Your blood has A and Rh proteins. You can give to others with the same proteins (A+ and AB+).',
-    receiveWhy: 'You need blood with A and Rh compatibility, and no B protein.'
-  },
-  "B-": {
-    receive: ["🅾️-", "🅱️-"],
-    donate: ["🅱️-", "🅱️+", "🆎-", "🆎+"],
-    donateWhy: 'Your blood has B but not Rh. You can donate to people who accept B, whether they are Rh− or Rh+',
-    receiveWhy: 'Your body cannot accept A or Rh. Only B− or O− is safe.'
-  },
-  "B+": {
-    receive: ["🅾️-", "🅾️+", "🅱️-", "🅱️+"],
-    donate: ["🅱️+", "🆎+"],
-    donateWhy: ' You have B and Rh. You can only give to people who also have B and Rh.',
-    receiveWhy: 'You need to match B and Rh types — no A is allowed.'
-  },
-  "AB-": {
-    receive: ["🅾️-", "🅰️-", "🅱️-", "🆎-"],
-    donate: ["🆎-", "🆎+"],
-    donateWhy: 'Your blood has both A and B proteins but no Rh. You can only give to AB people.',
-    receiveWhy: 'You must avoid Rh+ and only receive from donors with no conflicting proteins.'
-  },
-  "AB+": {
-    receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
-    donate: ["🆎+"],
-    donateWhy: 'You have all proteins (A, B, Rh). Your blood can only be safely received by another AB+.',
-    receiveWhy: 'You are the universal recipient. You can accept blood from anyone because your immune system recognizes all proteins.'
-  },
-};
-</script>
+
+  <script>
+    // Blood Type Compatibility Checker -start all and info working
+    const compatibility = {
+      "O-": {
+        receive: ["🅾️-"],
+        donate: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
+        donateWhy: ' You have no A, B, or Rh proteins on your red blood cells. That means your blood won’t trigger an immune response in anyone.This makes you a universal donor.',
+        receiveWhy: 'Since your immune system reacts to A, B, or Rh proteins, even a small mismatch can be dangerous. Only O− is completely safe for you.'
+      },
+      "O+": {
+        receive: ["🅾️-", "🅾️+"],
+        donate: ["🅾️+", "🅰️+", "🅱️+", "🆎+"],
+        donateWhy: 'You have the Rh protein but no A or B. You can safely donate to anyone with Rh+ who doesn’t need A or B proteins.',
+        receiveWhy: 'You need O blood (no A or B), and the Rh must match (positive is OK).'
+      },
+      "A-": {
+        receive: ["🅾️-", "🅰️-"],
+        donate: ["🅰️-", "🅰️+", "🆎-", "🆎+"],
+        donateWhy: 'You have A protein but no Rh. You can give to A-, A+, AB-, AB+ (as long as they can accept A).',
+        receiveWhy: 'You can’t receive B or Rh-positive blood. Only A− or O− is safe.'
+      },
+      "A+": {
+        receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+"],
+        donate: ["🅰️+", "🆎+"],
+        donateWhy: 'Your blood has A and Rh proteins. You can give to others with the same proteins (A+ and AB+).',
+        receiveWhy: 'You need blood with A and Rh compatibility, and no B protein.'
+      },
+      "B-": {
+        receive: ["🅾️-", "🅱️-"],
+        donate: ["🅱️-", "🅱️+", "🆎-", "🆎+"],
+        donateWhy: 'Your blood has B but not Rh. You can donate to people who accept B, whether they are Rh− or Rh+',
+        receiveWhy: 'Your body cannot accept A or Rh. Only B− or O− is safe.'
+      },
+      "B+": {
+        receive: ["🅾️-", "🅾️+", "🅱️-", "🅱️+"],
+        donate: ["🅱️+", "🆎+"],
+        donateWhy: ' You have B and Rh. You can only give to people who also have B and Rh.',
+        receiveWhy: 'You need to match B and Rh types — no A is allowed.'
+      },
+      "AB-": {
+        receive: ["🅾️-", "🅰️-", "🅱️-", "🆎-"],
+        donate: ["🆎-", "🆎+"],
+        donateWhy: 'Your blood has both A and B proteins but no Rh. You can only give to AB people.',
+        receiveWhy: 'You must avoid Rh+ and only receive from donors with no conflicting proteins.'
+      },
+      "AB+": {
+        receive: ["🅾️-", "🅾️+", "🅰️-", "🅰️+", "🅱️-", "🅱️+", "🆎-", "🆎+"],
+        donate: ["🆎+"],
+        donateWhy: 'You have all proteins (A, B, Rh). Your blood can only be safely received by another AB+.',
+        receiveWhy: 'You are the universal recipient. You can accept blood from anyone because your immune system recognizes all proteins.'
+      },
+    };
+  </script>
 
 </body>
+
 </html>

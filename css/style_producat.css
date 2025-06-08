@@ -19,7 +19,7 @@
             border-radius: 5px;
             padding: 15px;
             margin: 10px;
-            flex: 1 1 calc(33% - 20px);
+            /* flex: 1 1 calc(33% - 20px); */ /* Uncomment for 3 items per row */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .product-item img {
